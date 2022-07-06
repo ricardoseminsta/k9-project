@@ -7,8 +7,9 @@
     "node": "16.x"
   },
   "scripts": {
+    "tsc": "tsc",
     "start": "node dist/server.js",
-    "postinstall": "tsc && copyfiles -u 1 src/**/*.mustache dist/",
+    "postinstall": "npm sun tsc && copyfiles -u 1 src/**/*.mustache dist/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "nodemon -e ts,json,mustache src/server.ts"
   },
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/ricardoseminsta/k9-project#readme",
   "dependencies": {
+    "copyfiles": "^2.4.1",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mustache-express": "^1.3.2",
